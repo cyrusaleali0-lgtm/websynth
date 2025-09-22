@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Synthesizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Web Synthesizer</h1>
+            <p>A simple interactive synthesizer playable with your computer keyboard</p>
+        </header>
+        
+        <main>
+            <section class="synth-controls">
+                <div class="control-group">
+                    <label for="waveform">Waveform:</label>
+                    <select id="waveform">
+                        <option value="sine">Sine</option>
+                        <option value="square">Square</option>
+                        <option value="sawtooth">Sawtooth</option>
+                        <option value="triangle">Triangle</option>
+                    </select>
+                </div>
+                
+                <div class="control-group">
+                    <label for="volume">Volume:</label>
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+                </div>
+                
+                <div class="control-group">
+                    <label for="octave">Octave:</label>
+                    <input type="range" id="octave" min="0" max="8" step="1" value="4">
+                    <span id="octave-display">4</span>
+                </div>
+            </section>
+            
+            <section class="effects-section">
+                <h2>Effects</h2>
+                <div class="effects-controls">
+                    <div class="effect-group">
+                        <h3>Reverb</h3>
+                        <div class="control-group">
+                            <label for="reverb-enable">Enable:</label>
+                            <input type="checkbox" id="reverb-enable">
+                        </div>
+                        <div class="control-group">
+                            <label for="reverb-level">Level:</label>
+                            <input type="range" id="reverb-level" min="0" max="1" step="0.01" value="0.5">
+                            <span id="reverb-level-display">0.5</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="reverb-time">Time:</label>
+                            <input type="range" id="reverb-time" min="0.1" max="5" step="0.1" value="1.5">
+                            <span id="reverb-time-display">1.5s</span>
+                        </div>
+                    </div>
+                    
+                    <div class="effect-group">
+                        <h3>Echo/Delay</h3>
+                        <div class="control-group">
+                            <label for="echo-enable">Enable:</label>
+                            <input type="checkbox" id="echo-enable">
+                        </div>
+                        <div class="control-group">
+                            <label for="echo-level">Level:</label>
+                            <input type="range" id="echo-level" min="0" max="1" step="0.01" value="0.3">
+                            <span id="echo-level-display">0.3</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="echo-time">Time:</label>
+                            <input type="range" id="echo-time" min="0.05" max="1" step="0.01" value="0.25">
+                            <span id="echo-time-display">0.25s</span>
+                        </div>
+                        <div class="control-group">
+                            <label for="echo-feedback">Feedback:</label>
+                            <input type="range" id="echo-feedback" min="0" max="0.9" step="0.01" value="0.4">
+                            <span id="echo-feedback-display">0.4</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="keyboard-section">
+                <h2>Keyboard</h2>
+                <p>Use keys A,S,D,F,G,H,J,K,O,L,P,; to play notes</p>
+                <div class="keyboard">
+                    <div class="key white" data-key="A" data-note="C">A<br><span>C</span></div>
+                    <div class="key black" data-key="W" data-note="C#">W<br><span>C#</span></div>
+                    <div class="key white" data-key="S" data-note="D">S<br><span>D</span></div>
+                    <div class="key black" data-key="E" data-note="D#">E<br><span>D#</span></div>
+                    <div class="key white" data-key="D" data-note="E">D<br><span>E</span></div>
+                    <div class="key white" data-key="F" data-note="F">F<br><span>F</span></div>
+                    <div class="key black" data-key="T" data-note="F#">T<br><span>F#</span></div>
+                    <div class="key white" data-key="G" data-note="G">G<br><span>G</span></div>
+                    <div class="key black" data-key="Y" data-note="G#">Y<br><span>G#</span></div>
+                    <div class="key white" data-key="H" data-note="A">H<br><span>A</span></div>
+                    <div class="key black" data-key="U" data-note="A#">U<br><span>A#</span></div>
+                    <div class="key white" data-key="J" data-note="B">J<br><span>B</span></div>
+                    <div class="key white" data-key="K" data-note="C5">K<br><span>C</span></div>
+                    <div class="key black" data-key="O" data-note="C#5">O<br><span>C#</span></div>
+                    <div class="key white" data-key="L" data-note="D5">L<br><span>D</span></div>
+                    <div class="key black" data-key="P" data-note="D#5">P<br><span>D#</span></div>
+                    <div class="key white" data-key=";" data-note="E5">;<br><span>E</span></div>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>Press keys or click on the keyboard to play notes | Current Octave: <span id="current-octave">4</span></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
